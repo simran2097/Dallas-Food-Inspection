@@ -1,0 +1,1194 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2022.1">
+  <Nodes>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="330" y="271" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeNow()" field="DI_CreateDate" size="19" type="DateTime" />
+            <FormulaField expression="[Engine.WorkflowDirectory]" field="DI_WorkflowDirectory" size="64" type="String" />
+            <FormulaField expression="DateTimeParse([Inspection_Month],'%b %y')" field="InspectionMonth" size="10" type="Date" />
+            <FormulaField expression="DateTimeParse([InspectionYear2],'%y')" field="InspectionYear" size="10" type="Date" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DI_CreateDate = DateTimeNow()
+DI_WorkflowDirectory = [Engine.WorkflowDirectory]
+...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="52">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="271" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords>4969A80F73377F3D7BFA3B5F09F1F1A5F273936A04EFC9F59F291C0A6193902E722F0</Passwords>
+          <File FileFormat="23" RecordLimit="">odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* 
+from DAMG7370.dbo.stg_Dallas_Food_insp</File>
+          <FormatSpecificOptions>
+            <SingleRowFetch>False</SingleRowFetch>
+            <ReadCentroids>False</ReadCentroids>
+            <TableStyle>Quoted</TableStyle>
+            <CacheData>False</CacheData>
+            <SessionReadOnly>True</SessionReadOnly>
+            <ReadUncommitted>False</ReadUncommitted>
+            <NoProgress>True</NoProgress>
+            <PostSQL />
+            <PreSQLOnConfig>True</PreSQLOnConfig>
+            <PreSQL />
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>DSN=DAMG7370
+Query=select DAMG7370.dbo.stg_Dall...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Restaurant_Name" size="65" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Inspection_Type" size="9" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="String" />
+            <Field name="Inspection_Date" size="10" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="String" />
+            <Field name="Inspection_Score" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Street_Number" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int32" />
+            <Field name="Street_Name" size="25" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Street_Direction" size="1" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="String" />
+            <Field name="Street_Type" size="4" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="String" />
+            <Field name="Street_Unit" size="5" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="String" />
+            <Field name="Street_Address" size="36" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Zip_Code" size="10" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="String" />
+            <Field name="Violation_Description_-_1" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_1" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_1" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_1" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_2" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_2" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_2" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_2" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_3" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_3" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_3" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_3" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_4" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_4" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_4" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_4" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_5" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_5" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_5" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_5" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_6" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_6" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_6" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_6" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_7" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_7" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_7" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_7" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_8" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_8" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_8" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_8" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_9" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_9" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_9" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_9" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_10" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_10" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_10" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_10" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_11" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_11" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_11" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_11" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_12" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_12" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_12" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_12" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_13" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_13" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_13" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_13" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_14" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_14" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_14" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_14" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_15" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_15" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_15" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_15" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_16" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_16" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_16" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_16" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Description_-_17" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_17" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_17" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_17" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Description_-_18" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_18" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_18" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_18" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_WString" />
+            <Field name="Violation_Description_-_19" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_19" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_19" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_19" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Description_-_20" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_20" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_20" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation__Memo_-_20" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Description_-_21" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_21" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_21" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_21" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Description_-_22" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_22" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_22" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_22" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Description_-_23" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_23" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_23" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_23" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Description_-_24" size="59" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_24" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_24" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_24" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Description_-_25" size="50" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Points_-_25" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Int16" />
+            <Field name="Violation_Detail_-_25" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Violation_Memo_-_25" size="100" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="Inspection_Month" size="8" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="String" />
+            <Field name="Inspection_Year" size="6" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="String" />
+            <Field name="Lat_Long_Location" size="59" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="V_String" />
+            <Field name="DI_CreateDate" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="DateTime" />
+            <Field name="DI_WorkflowFileName" size="64" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="String" />
+            <Field name="InspectionDate" source="File: odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||select DAMG7370.dbo.stg_Dallas_Food_insp.* &#xA;from DAMG7370.dbo.stg_Dallas_Food_insp" type="Date" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="150" y="271" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>Inspection_Month</InputFieldName>
+          <Language>English</Language>
+          <Format>MM-dd-yy</Format>
+          <OutputFieldName>InspectionMonth</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert Inspection_Month From:
+MM-dd-yy</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="66">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="246" y="271" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Inspection_Year</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>InspectionYear</RootName>
+          <Delimeters value="Y" />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="654" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RestaurantSK</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="870" y="55" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Anjali\AppData\Local\Temp\Engine_17316_741e979433acba42b80cac69d89c8bc6_\Engine_17316_7fe17f4ca50beb46b335bf42a4656677~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="58">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="558" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Restaurant_Name" />
+            <Field field="Street_Number" />
+            <Field field="Street_Name" />
+            <Field field="Street_Direction" />
+            <Field field="Street_Type" />
+            <Field field="Street_Unit" />
+            <Field field="Street_Address" />
+            <Field field="Zip_Code" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="882" y="176" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Anjali\AppData\Local\Temp\Engine_17316_741e979433acba42b80cac69d89c8bc6_\Engine_17316_26f1ec6816660b4e9925691eaaa3c173~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="666" y="235" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>GeoSK</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="654" y="367" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>InspectionTypeSK</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="38">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="870" y="332" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\Anjali\AppData\Local\Temp\Engine_17316_741e979433acba42b80cac69d89c8bc6_\Engine_17316_0a4a5e9f645f2140a55cb329d5ac9e87~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="59">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="558" y="235" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Street_Number" />
+            <Field field="Street_Name" />
+            <Field field="Street_Direction" />
+            <Field field="Street_Type" />
+            <Field field="Street_Unit" />
+            <Field field="Street_Address" />
+            <Field field="Zip_Code" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="558" y="367" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Inspection_Type" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="67">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1230" y="115" width="144" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Dim_Dallas_Restaurant</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Yellow" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="68">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1230" y="247" width="144" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Dim_Dallas_GEO</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Yellow" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1230" y="391" width="168" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Dim_Dallas_InspectionType</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="Yellow" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="71">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="750" y="103" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RestaurantSK" selected="True" />
+            <SelectField field="Restaurant_Name" selected="True" />
+            <SelectField field="Inspection_Type" selected="False" />
+            <SelectField field="Inspection_Date" selected="False" />
+            <SelectField field="Inspection_Score" selected="False" />
+            <SelectField field="Street_Number" selected="True" />
+            <SelectField field="Street_Name" selected="True" />
+            <SelectField field="Street_Direction" selected="True" />
+            <SelectField field="Street_Type" selected="True" />
+            <SelectField field="Street_Unit" selected="True" />
+            <SelectField field="Street_Address" selected="True" />
+            <SelectField field="Zip_Code" selected="True" />
+            <SelectField field="Violation_Description_-_1" selected="False" />
+            <SelectField field="Violation_Points_-_1" selected="False" />
+            <SelectField field="Violation_Detail_-_1" selected="False" />
+            <SelectField field="Violation_Memo_-_1" selected="False" />
+            <SelectField field="Violation_Description_-_2" selected="False" />
+            <SelectField field="Violation_Points_-_2" selected="False" />
+            <SelectField field="Violation_Detail_-_2" selected="False" />
+            <SelectField field="Violation_Memo_-_2" selected="False" />
+            <SelectField field="Violation_Description_-_3" selected="False" />
+            <SelectField field="Violation_Points_-_3" selected="False" />
+            <SelectField field="Violation_Detail_-_3" selected="False" />
+            <SelectField field="Violation_Memo_-_3" selected="False" />
+            <SelectField field="Violation_Description_-_4" selected="False" />
+            <SelectField field="Violation_Points_-_4" selected="False" />
+            <SelectField field="Violation_Detail_-_4" selected="False" />
+            <SelectField field="Violation_Memo_-_4" selected="False" />
+            <SelectField field="Violation_Description_-_5" selected="False" />
+            <SelectField field="Violation_Points_-_5" selected="False" />
+            <SelectField field="Violation_Detail_-_5" selected="False" />
+            <SelectField field="Violation_Memo_-_5" selected="False" />
+            <SelectField field="Violation_Description_-_6" selected="False" />
+            <SelectField field="Violation_Points_-_6" selected="False" />
+            <SelectField field="Violation_Detail_-_6" selected="False" />
+            <SelectField field="Violation_Memo_-_6" selected="False" />
+            <SelectField field="Violation_Description_-_7" selected="False" />
+            <SelectField field="Violation_Points_-_7" selected="False" />
+            <SelectField field="Violation_Detail_-_7" selected="False" />
+            <SelectField field="Violation_Memo_-_7" selected="False" />
+            <SelectField field="Violation_Description_-_8" selected="False" />
+            <SelectField field="Violation_Points_-_8" selected="False" />
+            <SelectField field="Violation_Detail_-_8" selected="False" />
+            <SelectField field="Violation_Memo_-_8" selected="False" />
+            <SelectField field="Violation_Description_-_9" selected="False" />
+            <SelectField field="Violation_Points_-_9" selected="False" />
+            <SelectField field="Violation_Detail_-_9" selected="False" />
+            <SelectField field="Violation_Memo_-_9" selected="False" />
+            <SelectField field="Violation_Description_-_10" selected="False" />
+            <SelectField field="Violation_Points_-_10" selected="False" />
+            <SelectField field="Violation_Detail_-_10" selected="False" />
+            <SelectField field="Violation_Memo_-_10" selected="False" />
+            <SelectField field="Violation_Description_-_11" selected="False" />
+            <SelectField field="Violation_Points_-_11" selected="False" />
+            <SelectField field="Violation_Detail_-_11" selected="False" />
+            <SelectField field="Violation_Memo_-_11" selected="False" />
+            <SelectField field="Violation_Description_-_12" selected="False" />
+            <SelectField field="Violation_Points_-_12" selected="False" />
+            <SelectField field="Violation_Detail_-_12" selected="False" />
+            <SelectField field="Violation_Memo_-_12" selected="False" />
+            <SelectField field="Violation_Description_-_13" selected="False" />
+            <SelectField field="Violation_Points_-_13" selected="False" />
+            <SelectField field="Violation_Detail_-_13" selected="False" />
+            <SelectField field="Violation_Memo_-_13" selected="False" />
+            <SelectField field="Violation_Description_-_14" selected="False" />
+            <SelectField field="Violation_Points_-_14" selected="False" />
+            <SelectField field="Violation_Detail_-_14" selected="False" />
+            <SelectField field="Violation_Memo_-_14" selected="False" />
+            <SelectField field="Violation_Description_-_15" selected="False" />
+            <SelectField field="Violation_Points_-_15" selected="False" />
+            <SelectField field="Violation_Detail_-_15" selected="False" />
+            <SelectField field="Violation_Memo_-_15" selected="False" />
+            <SelectField field="Violation_Description_-_16" selected="False" />
+            <SelectField field="Violation_Points_-_16" selected="False" />
+            <SelectField field="Violation_Detail_-_16" selected="False" />
+            <SelectField field="Violation_Memo_-_16" selected="False" />
+            <SelectField field="Violation_Description_-_17" selected="False" />
+            <SelectField field="Violation_Points_-_17" selected="False" />
+            <SelectField field="Violation_Detail_-_17" selected="False" />
+            <SelectField field="Violation_Memo_-_17" selected="False" />
+            <SelectField field="Violation_Description_-_18" selected="False" />
+            <SelectField field="Violation_Points_-_18" selected="False" />
+            <SelectField field="Violation_Detail_-_18" selected="False" />
+            <SelectField field="Violation_Memo_-_18" selected="False" />
+            <SelectField field="Violation_Description_-_19" selected="False" />
+            <SelectField field="Violation_Points_-_19" selected="False" />
+            <SelectField field="Violation_Detail_-_19" selected="False" />
+            <SelectField field="Violation_Memo_-_19" selected="False" />
+            <SelectField field="Violation_Description_-_20" selected="False" />
+            <SelectField field="Violation_Points_-_20" selected="False" />
+            <SelectField field="Violation_Detail_-_20" selected="False" />
+            <SelectField field="Violation__Memo_-_20" selected="False" />
+            <SelectField field="Violation_Description_-_21" selected="False" />
+            <SelectField field="Violation_Points_-_21" selected="False" />
+            <SelectField field="Violation_Detail_-_21" selected="False" />
+            <SelectField field="Violation_Memo_-_21" selected="False" />
+            <SelectField field="Violation_Description_-_22" selected="False" />
+            <SelectField field="Violation_Points_-_22" selected="False" />
+            <SelectField field="Violation_Detail_-_22" selected="False" />
+            <SelectField field="Violation_Memo_-_22" selected="False" />
+            <SelectField field="Violation_Description_-_23" selected="False" />
+            <SelectField field="Violation_Points_-_23" selected="False" />
+            <SelectField field="Violation_Detail_-_23" selected="False" />
+            <SelectField field="Violation_Memo_-_23" selected="False" />
+            <SelectField field="Violation_Description_-_24" selected="False" />
+            <SelectField field="Violation_Points_-_24" selected="False" />
+            <SelectField field="Violation_Detail_-_24" selected="False" />
+            <SelectField field="Violation_Memo_-_24" selected="False" />
+            <SelectField field="Violation_Description_-_25" selected="False" />
+            <SelectField field="Violation_Points_-_25" selected="False" />
+            <SelectField field="Violation_Detail_-_25" selected="False" />
+            <SelectField field="Violation_Memo_-_25" selected="False" />
+            <SelectField field="Inspection_Month" selected="False" />
+            <SelectField field="Inspection_Year" selected="False" />
+            <SelectField field="Lat_Long_Location" selected="False" />
+            <SelectField field="DI_CreateDate" selected="True" />
+            <SelectField field="DI_WorkflowDirectory" selected="True" />
+            <SelectField field="DI_WorkflowFileName" selected="True" />
+            <SelectField field="InspectionDate" selected="False" />
+            <SelectField field="InspectionMonth" selected="False" />
+            <SelectField field="InspectionYear1" selected="False" />
+            <SelectField field="InspectionYear2" selected="False" />
+            <SelectField field="InspectionYear" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="72">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="750" y="223" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="GeoSK" selected="True" />
+            <SelectField field="Restaurant_Name" selected="False" />
+            <SelectField field="Inspection_Type" selected="False" />
+            <SelectField field="Inspection_Date" selected="False" />
+            <SelectField field="Inspection_Score" selected="False" />
+            <SelectField field="Street_Number" selected="True" />
+            <SelectField field="Street_Name" selected="True" />
+            <SelectField field="Street_Direction" selected="True" />
+            <SelectField field="Street_Type" selected="True" />
+            <SelectField field="Street_Unit" selected="True" />
+            <SelectField field="Street_Address" selected="True" />
+            <SelectField field="Zip_Code" selected="True" />
+            <SelectField field="Violation_Description_-_1" selected="False" />
+            <SelectField field="Violation_Points_-_1" selected="False" />
+            <SelectField field="Violation_Detail_-_1" selected="False" />
+            <SelectField field="Violation_Memo_-_1" selected="False" />
+            <SelectField field="Violation_Description_-_2" selected="False" />
+            <SelectField field="Violation_Points_-_2" selected="False" />
+            <SelectField field="Violation_Detail_-_2" selected="False" />
+            <SelectField field="Violation_Memo_-_2" selected="False" />
+            <SelectField field="Violation_Description_-_3" selected="False" />
+            <SelectField field="Violation_Points_-_3" selected="False" />
+            <SelectField field="Violation_Detail_-_3" selected="False" />
+            <SelectField field="Violation_Memo_-_3" selected="False" />
+            <SelectField field="Violation_Description_-_4" selected="False" />
+            <SelectField field="Violation_Points_-_4" selected="False" />
+            <SelectField field="Violation_Detail_-_4" selected="False" />
+            <SelectField field="Violation_Memo_-_4" selected="False" />
+            <SelectField field="Violation_Description_-_5" selected="False" />
+            <SelectField field="Violation_Points_-_5" selected="False" />
+            <SelectField field="Violation_Detail_-_5" selected="False" />
+            <SelectField field="Violation_Memo_-_5" selected="False" />
+            <SelectField field="Violation_Description_-_6" selected="False" />
+            <SelectField field="Violation_Points_-_6" selected="False" />
+            <SelectField field="Violation_Detail_-_6" selected="False" />
+            <SelectField field="Violation_Memo_-_6" selected="False" />
+            <SelectField field="Violation_Description_-_7" selected="False" />
+            <SelectField field="Violation_Points_-_7" selected="False" />
+            <SelectField field="Violation_Detail_-_7" selected="False" />
+            <SelectField field="Violation_Memo_-_7" selected="False" />
+            <SelectField field="Violation_Description_-_8" selected="False" />
+            <SelectField field="Violation_Points_-_8" selected="False" />
+            <SelectField field="Violation_Detail_-_8" selected="False" />
+            <SelectField field="Violation_Memo_-_8" selected="False" />
+            <SelectField field="Violation_Description_-_9" selected="False" />
+            <SelectField field="Violation_Points_-_9" selected="False" />
+            <SelectField field="Violation_Detail_-_9" selected="False" />
+            <SelectField field="Violation_Memo_-_9" selected="False" />
+            <SelectField field="Violation_Description_-_10" selected="False" />
+            <SelectField field="Violation_Points_-_10" selected="False" />
+            <SelectField field="Violation_Detail_-_10" selected="False" />
+            <SelectField field="Violation_Memo_-_10" selected="False" />
+            <SelectField field="Violation_Description_-_11" selected="False" />
+            <SelectField field="Violation_Points_-_11" selected="False" />
+            <SelectField field="Violation_Detail_-_11" selected="False" />
+            <SelectField field="Violation_Memo_-_11" selected="False" />
+            <SelectField field="Violation_Description_-_12" selected="False" />
+            <SelectField field="Violation_Points_-_12" selected="False" />
+            <SelectField field="Violation_Detail_-_12" selected="False" />
+            <SelectField field="Violation_Memo_-_12" selected="False" />
+            <SelectField field="Violation_Description_-_13" selected="False" />
+            <SelectField field="Violation_Points_-_13" selected="False" />
+            <SelectField field="Violation_Detail_-_13" selected="False" />
+            <SelectField field="Violation_Memo_-_13" selected="False" />
+            <SelectField field="Violation_Description_-_14" selected="False" />
+            <SelectField field="Violation_Points_-_14" selected="False" />
+            <SelectField field="Violation_Detail_-_14" selected="False" />
+            <SelectField field="Violation_Memo_-_14" selected="False" />
+            <SelectField field="Violation_Description_-_15" selected="False" />
+            <SelectField field="Violation_Points_-_15" selected="False" />
+            <SelectField field="Violation_Detail_-_15" selected="False" />
+            <SelectField field="Violation_Memo_-_15" selected="False" />
+            <SelectField field="Violation_Description_-_16" selected="False" />
+            <SelectField field="Violation_Points_-_16" selected="False" />
+            <SelectField field="Violation_Detail_-_16" selected="False" />
+            <SelectField field="Violation_Memo_-_16" selected="False" />
+            <SelectField field="Violation_Description_-_17" selected="False" />
+            <SelectField field="Violation_Points_-_17" selected="False" />
+            <SelectField field="Violation_Detail_-_17" selected="False" />
+            <SelectField field="Violation_Memo_-_17" selected="False" />
+            <SelectField field="Violation_Description_-_18" selected="False" />
+            <SelectField field="Violation_Points_-_18" selected="False" />
+            <SelectField field="Violation_Detail_-_18" selected="False" />
+            <SelectField field="Violation_Memo_-_18" selected="False" />
+            <SelectField field="Violation_Description_-_19" selected="False" />
+            <SelectField field="Violation_Points_-_19" selected="False" />
+            <SelectField field="Violation_Detail_-_19" selected="False" />
+            <SelectField field="Violation_Memo_-_19" selected="False" />
+            <SelectField field="Violation_Description_-_20" selected="False" />
+            <SelectField field="Violation_Points_-_20" selected="False" />
+            <SelectField field="Violation_Detail_-_20" selected="False" />
+            <SelectField field="Violation__Memo_-_20" selected="False" />
+            <SelectField field="Violation_Description_-_21" selected="False" />
+            <SelectField field="Violation_Points_-_21" selected="False" />
+            <SelectField field="Violation_Detail_-_21" selected="False" />
+            <SelectField field="Violation_Memo_-_21" selected="False" />
+            <SelectField field="Violation_Description_-_22" selected="False" />
+            <SelectField field="Violation_Points_-_22" selected="False" />
+            <SelectField field="Violation_Detail_-_22" selected="False" />
+            <SelectField field="Violation_Memo_-_22" selected="False" />
+            <SelectField field="Violation_Description_-_23" selected="False" />
+            <SelectField field="Violation_Points_-_23" selected="False" />
+            <SelectField field="Violation_Detail_-_23" selected="False" />
+            <SelectField field="Violation_Memo_-_23" selected="False" />
+            <SelectField field="Violation_Description_-_24" selected="False" />
+            <SelectField field="Violation_Points_-_24" selected="False" />
+            <SelectField field="Violation_Detail_-_24" selected="False" />
+            <SelectField field="Violation_Memo_-_24" selected="False" />
+            <SelectField field="Violation_Description_-_25" selected="False" />
+            <SelectField field="Violation_Points_-_25" selected="False" />
+            <SelectField field="Violation_Detail_-_25" selected="False" />
+            <SelectField field="Violation_Memo_-_25" selected="False" />
+            <SelectField field="Inspection_Month" selected="False" />
+            <SelectField field="Inspection_Year" selected="False" />
+            <SelectField field="Lat_Long_Location" selected="False" />
+            <SelectField field="DI_CreateDate" selected="True" />
+            <SelectField field="DI_WorkflowDirectory" selected="True" />
+            <SelectField field="DI_WorkflowFileName" selected="True" />
+            <SelectField field="InspectionDate" selected="False" />
+            <SelectField field="InspectionMonth" selected="False" />
+            <SelectField field="InspectionYear1" selected="False" />
+            <SelectField field="InspectionYear2" selected="False" />
+            <SelectField field="InspectionYear" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="73">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="762" y="343" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="InspectionTypeSK" selected="True" />
+            <SelectField field="Restaurant_Name" selected="False" />
+            <SelectField field="Inspection_Type" selected="True" />
+            <SelectField field="Inspection_Date" selected="False" />
+            <SelectField field="Inspection_Score" selected="False" />
+            <SelectField field="Street_Number" selected="False" />
+            <SelectField field="Street_Name" selected="False" />
+            <SelectField field="Street_Direction" selected="False" />
+            <SelectField field="Street_Type" selected="False" />
+            <SelectField field="Street_Unit" selected="False" />
+            <SelectField field="Street_Address" selected="False" />
+            <SelectField field="Zip_Code" selected="False" />
+            <SelectField field="Violation_Description_-_1" selected="False" />
+            <SelectField field="Violation_Points_-_1" selected="False" />
+            <SelectField field="Violation_Detail_-_1" selected="False" />
+            <SelectField field="Violation_Memo_-_1" selected="False" />
+            <SelectField field="Violation_Description_-_2" selected="False" />
+            <SelectField field="Violation_Points_-_2" selected="False" />
+            <SelectField field="Violation_Detail_-_2" selected="False" />
+            <SelectField field="Violation_Memo_-_2" selected="False" />
+            <SelectField field="Violation_Description_-_3" selected="False" />
+            <SelectField field="Violation_Points_-_3" selected="False" />
+            <SelectField field="Violation_Detail_-_3" selected="False" />
+            <SelectField field="Violation_Memo_-_3" selected="False" />
+            <SelectField field="Violation_Description_-_4" selected="False" />
+            <SelectField field="Violation_Points_-_4" selected="False" />
+            <SelectField field="Violation_Detail_-_4" selected="False" />
+            <SelectField field="Violation_Memo_-_4" selected="False" />
+            <SelectField field="Violation_Description_-_5" selected="False" />
+            <SelectField field="Violation_Points_-_5" selected="False" />
+            <SelectField field="Violation_Detail_-_5" selected="False" />
+            <SelectField field="Violation_Memo_-_5" selected="False" />
+            <SelectField field="Violation_Description_-_6" selected="False" />
+            <SelectField field="Violation_Points_-_6" selected="False" />
+            <SelectField field="Violation_Detail_-_6" selected="False" />
+            <SelectField field="Violation_Memo_-_6" selected="False" />
+            <SelectField field="Violation_Description_-_7" selected="False" />
+            <SelectField field="Violation_Points_-_7" selected="False" />
+            <SelectField field="Violation_Detail_-_7" selected="False" />
+            <SelectField field="Violation_Memo_-_7" selected="False" />
+            <SelectField field="Violation_Description_-_8" selected="False" />
+            <SelectField field="Violation_Points_-_8" selected="False" />
+            <SelectField field="Violation_Detail_-_8" selected="False" />
+            <SelectField field="Violation_Memo_-_8" selected="False" />
+            <SelectField field="Violation_Description_-_9" selected="False" />
+            <SelectField field="Violation_Points_-_9" selected="False" />
+            <SelectField field="Violation_Detail_-_9" selected="False" />
+            <SelectField field="Violation_Memo_-_9" selected="False" />
+            <SelectField field="Violation_Description_-_10" selected="False" />
+            <SelectField field="Violation_Points_-_10" selected="False" />
+            <SelectField field="Violation_Detail_-_10" selected="False" />
+            <SelectField field="Violation_Memo_-_10" selected="False" />
+            <SelectField field="Violation_Description_-_11" selected="False" />
+            <SelectField field="Violation_Points_-_11" selected="False" />
+            <SelectField field="Violation_Detail_-_11" selected="False" />
+            <SelectField field="Violation_Memo_-_11" selected="False" />
+            <SelectField field="Violation_Description_-_12" selected="False" />
+            <SelectField field="Violation_Points_-_12" selected="False" />
+            <SelectField field="Violation_Detail_-_12" selected="False" />
+            <SelectField field="Violation_Memo_-_12" selected="False" />
+            <SelectField field="Violation_Description_-_13" selected="False" />
+            <SelectField field="Violation_Points_-_13" selected="False" />
+            <SelectField field="Violation_Detail_-_13" selected="False" />
+            <SelectField field="Violation_Memo_-_13" selected="False" />
+            <SelectField field="Violation_Description_-_14" selected="False" />
+            <SelectField field="Violation_Points_-_14" selected="False" />
+            <SelectField field="Violation_Detail_-_14" selected="False" />
+            <SelectField field="Violation_Memo_-_14" selected="False" />
+            <SelectField field="Violation_Description_-_15" selected="False" />
+            <SelectField field="Violation_Points_-_15" selected="False" />
+            <SelectField field="Violation_Detail_-_15" selected="False" />
+            <SelectField field="Violation_Memo_-_15" selected="False" />
+            <SelectField field="Violation_Description_-_16" selected="False" />
+            <SelectField field="Violation_Points_-_16" selected="False" />
+            <SelectField field="Violation_Detail_-_16" selected="False" />
+            <SelectField field="Violation_Memo_-_16" selected="False" />
+            <SelectField field="Violation_Description_-_17" selected="False" />
+            <SelectField field="Violation_Points_-_17" selected="False" />
+            <SelectField field="Violation_Detail_-_17" selected="False" />
+            <SelectField field="Violation_Memo_-_17" selected="False" />
+            <SelectField field="Violation_Description_-_18" selected="False" />
+            <SelectField field="Violation_Points_-_18" selected="False" />
+            <SelectField field="Violation_Detail_-_18" selected="False" />
+            <SelectField field="Violation_Memo_-_18" selected="False" />
+            <SelectField field="Violation_Description_-_19" selected="False" />
+            <SelectField field="Violation_Points_-_19" selected="False" />
+            <SelectField field="Violation_Detail_-_19" selected="False" />
+            <SelectField field="Violation_Memo_-_19" selected="False" />
+            <SelectField field="Violation_Description_-_20" selected="False" />
+            <SelectField field="Violation_Points_-_20" selected="False" />
+            <SelectField field="Violation_Detail_-_20" selected="False" />
+            <SelectField field="Violation__Memo_-_20" selected="False" />
+            <SelectField field="Violation_Description_-_21" selected="False" />
+            <SelectField field="Violation_Points_-_21" selected="False" />
+            <SelectField field="Violation_Detail_-_21" selected="False" />
+            <SelectField field="Violation_Memo_-_21" selected="False" />
+            <SelectField field="Violation_Description_-_22" selected="False" />
+            <SelectField field="Violation_Points_-_22" selected="False" />
+            <SelectField field="Violation_Detail_-_22" selected="False" />
+            <SelectField field="Violation_Memo_-_22" selected="False" />
+            <SelectField field="Violation_Description_-_23" selected="False" />
+            <SelectField field="Violation_Points_-_23" selected="False" />
+            <SelectField field="Violation_Detail_-_23" selected="False" />
+            <SelectField field="Violation_Memo_-_23" selected="False" />
+            <SelectField field="Violation_Description_-_24" selected="False" />
+            <SelectField field="Violation_Points_-_24" selected="False" />
+            <SelectField field="Violation_Detail_-_24" selected="False" />
+            <SelectField field="Violation_Memo_-_24" selected="False" />
+            <SelectField field="Violation_Description_-_25" selected="False" />
+            <SelectField field="Violation_Points_-_25" selected="False" />
+            <SelectField field="Violation_Detail_-_25" selected="False" />
+            <SelectField field="Violation_Memo_-_25" selected="False" />
+            <SelectField field="Inspection_Month" selected="False" />
+            <SelectField field="Inspection_Year" selected="False" />
+            <SelectField field="Lat_Long_Location" selected="False" />
+            <SelectField field="DI_CreateDate" selected="True" />
+            <SelectField field="DI_WorkflowDirectory" selected="True" />
+            <SelectField field="DI_WorkflowFileName" selected="True" />
+            <SelectField field="InspectionDate" selected="False" />
+            <SelectField field="InspectionMonth" selected="False" />
+            <SelectField field="InspectionYear1" selected="False" />
+            <SelectField field="InspectionYear2" selected="False" />
+            <SelectField field="InspectionYear" selected="False" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="74">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1049" y="54" width="176" height="459" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Dallas_Dim_Table</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="50">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1074" y="103" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||DAMG7370.dbo.Dim_Dallas_Restaurant</File>
+              <Passwords>4969A80F73377F3D7BFA3B5F09F1F1A5F273936A04EFC9F59F291C0A6193902E722F0</Passwords>
+              <FormatSpecificOptions>
+                <TransactionMessages>False</TransactionMessages>
+                <Geometry>True</Geometry>
+                <Projection />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <SpatialObjSize>8000</SpatialObjSize>
+                <OutputOption>Append</OutputOption>
+                <AppendMap>
+                  <AppendMapping mode="Custom">
+                    <Field Source="RestaurantSK" Dest="RestaurantSK" />
+                    <Field Source="Restaurant_Name" Dest="Restaurant_Name" />
+                    <Field Source="Street_Number" Dest="Street_Number" />
+                    <Field Source="Street_Name" Dest="Street_Name" />
+                    <Field Source="Street_Direction" Dest="Street_Direction" />
+                    <Field Source="Street_Type" Dest="Street_Type" />
+                    <Field Source="Street_Unit" Dest="Street_Unit" />
+                    <Field Source="Street_Address" Dest="Street_Address" />
+                    <Field Source="Zip_Code" Dest="Zip_Code" />
+                    <Field Source="DI_CreateDate" Dest="DI_CreateDate" />
+                    <Field Source="DI_WorkflowDirectory" Dest="DI_WorkflowDirectory" />
+                    <Field Source="DI_WorkflowFileName" Dest="DI_WorkflowFileName" />
+                  </AppendMapping>
+                </AppendMap>
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=DAMG7370
+Query=DAMG7370.dbo.Dim_Dallas_Rest...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="53">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1074" y="235" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||DAMG7370.dbo.Dim_Dallas_Geo</File>
+              <Passwords>4969A80F73377F3D7BFA3B5F09F1F1A5F273936A04EFC9F59F291C0A6193902E722F0</Passwords>
+              <FormatSpecificOptions>
+                <TransactionMessages>False</TransactionMessages>
+                <Geometry>True</Geometry>
+                <Projection />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <SpatialObjSize>8000</SpatialObjSize>
+                <OutputOption>Append</OutputOption>
+                <AppendMap>
+                  <AppendMapping mode="Custom">
+                    <Field Source="GeoSK" Dest="GeoSK" />
+                    <Field Source="Street_Number" Dest="Street_Number" />
+                    <Field Source="Street_Name" Dest="Street_Name" />
+                    <Field Source="Street_Direction" Dest="Street_Direction" />
+                    <Field Source="Street_Type" Dest="Street_Type" />
+                    <Field Source="Street_Unit" Dest="Street_Unit" />
+                    <Field Source="Street_Address" Dest="Street_Address" />
+                    <Field Source="Zip_Code" Dest="Zip_Code" />
+                    <Field Source="DI_CreateDate" Dest="DI_CreateDate" />
+                    <Field Source="DI_WorkflowDirectory" Dest="DI_WorkflowDirectory" />
+                    <Field Source="DI_WorkflowFileName" Dest="DI_WorkflowFileName" />
+                  </AppendMapping>
+                </AppendMap>
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=DAMG7370
+Query=DAMG7370.dbo.Dim_Dallas_Geo</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+        <Node ToolID="55">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+            <Position x="1074" y="367" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <File MaxRecords="" FileFormat="23">odbc:DSN=DAMG7370;UID=root;PWD=__EncPwd1__|||DAMG7370.dbo.Dim_Dallas_InspectionType</File>
+              <Passwords>4969A80F73377F3D7BFA3B5F09F1F1A5F273936A04EFC9F59F291C0A6193902E722F0</Passwords>
+              <FormatSpecificOptions>
+                <TransactionMessages>False</TransactionMessages>
+                <Geometry>True</Geometry>
+                <Projection />
+                <IgnoreDropTableSQLErrors>False</IgnoreDropTableSQLErrors>
+                <SpatialObjSize>8000</SpatialObjSize>
+                <OutputOption>Append</OutputOption>
+                <AppendMap>
+                  <AppendMapping mode="Custom">
+                    <Field Source="InspectionTypeSK" Dest="InspectionTypeSK" />
+                    <Field Source="Inspection_Type" Dest="Inspection_Type" />
+                    <Field Source="DI_CreateDate" Dest="DI_CreateDate" />
+                    <Field Source="DI_WorkflowDirectory" Dest="DI_WorkflowDirectory" />
+                    <Field Source="DI_WorkflowFileName" Dest="DI_WorkflowFileName" />
+                  </AppendMapping>
+                </AppendMap>
+                <PostSQL />
+                <TransactionSize>10000</TransactionSize>
+                <TableStyle>Quoted</TableStyle>
+                <PreSQL />
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>DSN=DAMG7370
+Query=DAMG7370.dbo.Dim_Dallas_Insp...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="58" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="59" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="52" Connection="Output" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="Output" />
+      <Destination ToolID="66" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="66" Connection="Output" />
+      <Destination ToolID="29" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="33" Connection="Output" />
+      <Destination ToolID="71" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="58" Connection="Unique" />
+      <Destination ToolID="33" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="34" Connection="Output" />
+      <Destination ToolID="72" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="36" Connection="Output" />
+      <Destination ToolID="73" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="59" Connection="Unique" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Unique" />
+      <Destination ToolID="36" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="71" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="72" Connection="Output" />
+      <Destination ToolID="53" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="73" Connection="Output" />
+      <Destination ToolID="55" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Part-2_DimTable_DataPreparation_Dallas_Altreyx</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="b785d263-3e69-4286-ba96-c93e502f8620" />
+      <Telemetry>
+        <PreviousWorkflowId value="8359333f-52a5-4b7d-89fa-32003ea3d856" />
+        <OriginWorkflowId value="0492e349-15a0-4c8b-990c-250130b7d532" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
